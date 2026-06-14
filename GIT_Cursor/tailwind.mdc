@@ -1,0 +1,40 @@
+---
+description: Tailwind CSS conventions — utility ordering, responsive patterns, component extraction
+globs: ["**/*.tsx", "**/*.jsx", "**/*.html", "**/*.astro", "**/*.vue"]
+alwaysApply: false
+---
+
+# Tailwind conventions
+
+## Utility ordering
+
+Order classes consistently so diffs stay readable:
+layout (display, position) → box model (w/h, margin, padding) → typography →
+color/background → border → effects (shadow, opacity) → transitions →
+states (`hover:` `focus:`) → responsive (`md:` `lg:`).
+
+## Responsive
+
+- Mobile-first. Write base styles, then layer `sm:` `md:` `lg:`. Never
+  desktop-first with overrides.
+- Use the project's configured breakpoints. Don't invent arbitrary
+  `[width:1037px]` values without a clear reason.
+
+## Component extraction
+
+- If the same class string repeats 3+ times, extract a component — don't
+  `@apply` it into a CSS file.
+- Don't create a wrapper component for a single use. Inline is fine until it
+  actually repeats.
+
+## Design tokens
+
+- Use theme tokens (colors, spacing, fonts) from `tailwind.config`. Never
+  hardcode hex values or one-off pixel values that duplicate an existing token.
+- Need a new recurring value? Add it to the theme first, then use the token.
+
+## Don't
+
+- No inline `style=` when a utility exists.
+- No `!important` / `!` prefix unless overriding third-party CSS — and comment
+  why when you do.

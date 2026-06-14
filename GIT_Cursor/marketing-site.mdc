@@ -1,0 +1,53 @@
+---
+description: Use when building or editing marketing-site pages, landing pages, or anything involving SEO, AEO, schema, metadata, or page structure. The LUX search-visibility standard.
+alwaysApply: false
+---
+
+# Marketing-site / SEO-AEO standard
+
+LUX builds are search- and answer-engine visible by default. Apply this whenever
+generating page structure, content sections, or head metadata.
+
+## Page structure
+
+- Exactly one `<h1>` per page stating the page's core promise. Logical
+  `<h2>`/`<h3>` order — no skipped levels.
+- Answer-first: lead each key section with a direct, quotable answer in the first
+  sentence, then expand. This is what AI Overviews and answer engines extract.
+- Semantic landmarks (header/nav/main/section/article/footer). Lists for lists,
+  tables for tabular data.
+
+## Metadata (every page)
+
+- Unique `<title>` (~50–60 chars) and meta description (~150–160 chars).
+- Canonical URL. Open Graph + Twitter card tags.
+- Descriptive, human (keyword-aware, not stuffed) alt text on images.
+
+## Structured data
+
+- Add JSON-LD appropriate to the page: Organization or LocalBusiness sitewide,
+  plus FAQPage for FAQ sections, Product for products, Article for posts,
+  BreadcrumbList for nav.
+- Keep schema in sync with visible on-page content. Never inject schema for
+  content that isn't actually on the page.
+
+## Performance (Core Web Vitals)
+
+- Lazy-load below-the-fold images; set explicit `width`/`height` to prevent
+  layout shift (CLS).
+- Prioritize the LCP element; avoid render-blocking resources where avoidable.
+- Don't ship unused JS/CSS for a marketing page that could be static.
+
+## AEO extras (LUX edge)
+
+- Include an FAQ block with genuine natural-language questions where it fits the
+  page.
+- Consider an `llms.txt` at the site root for key sites; flag when one would
+  help.
+- Use clean, descriptive URL slugs.
+
+## Don't
+
+- No keyword stuffing, hidden text, or schema that misrepresents content.
+- No medical / health / compliance claims without flagging for review — this
+  matters for regulated clients (CBD, behavioral health, etc.).

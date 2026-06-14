@@ -1,0 +1,36 @@
+---
+description: LUX brand and visual system — apply to all UI work
+alwaysApply: true
+---
+
+# LUX visual system
+
+Client sites should read as intentional and premium, not templated. When
+building or restyling UI, default to these unless the client's own brand
+overrides them.
+
+## Type
+
+- Display / headings: **Archivo** (tight tracking, heavier weights for impact).
+- Body / UI: **Inter**.
+- Mono / technical accents: **IBM Plex Mono**.
+- Establish one clear type scale. Don't mix more than these three families.
+
+## Aesthetic
+
+- Industrial / machined: generous whitespace, a strong grid, confident
+  hierarchy, restrained color.
+- Sharp, deliberate spacing over decorative flourish. Let structure carry the
+  design.
+
+## Color
+
+- Pull the client's brand palette into theme tokens first. If none exists,
+  default to a high-contrast neutral base: near-black ink, clean white, one
+  accent.
+- Maintain AA contrast minimum on all text.
+
+## Per-client override
+
+A client's own brand guidelines always win over LUX defaults. When client tokens
+exist in `tailwind.config`, use them and treat this rule as the fallback only.
